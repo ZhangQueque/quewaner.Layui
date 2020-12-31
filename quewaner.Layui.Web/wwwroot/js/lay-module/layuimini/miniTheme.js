@@ -16,6 +16,7 @@ layui.define(["jquery", "layer"], function (exports) {
          * @returns {{headerLogo, menuLeftHover, headerRight, menuLeft, headerRightThis, menuLeftThis}|*|*[]}
          */
         config: function (bgcolorId) {
+          
             var bgColorConfig = [
                 {
                     headerRightBg: '#ffffff', //头部右侧背景色
@@ -270,6 +271,7 @@ layui.define(["jquery", "layer"], function (exports) {
          * @param options
          */
         render: function (options) {
+            console.log(options)
             options.bgColorDefault = options.bgColorDefault || false;
             options.listen = options.listen || false;
             var bgcolorId = sessionStorage.getItem('layuiminiBgcolorId');
@@ -460,7 +462,7 @@ layui.define(["jquery", "layer"], function (exports) {
                 $('.layuimini-color .color-content ul .layui-this').attr('class', '');
                 $(this).attr('class', 'layui-this');
                 sessionStorage.setItem('layuiminiBgcolorId', bgcolorId);
-                miniTheme.render({
+                 miniTheme.render({
                     bgColorDefault: bgcolorId,
                     listen: false,
                 });

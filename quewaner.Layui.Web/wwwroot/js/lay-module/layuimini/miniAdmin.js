@@ -32,6 +32,7 @@ layui.define(["jquery", "miniMenu", "element","miniTab", "miniTheme"], function 
          * @param options.maxTabNum 最大的tab打开数量
          */
         render: function (options) {
+             
             options.iniUrl = options.iniUrl || null;
             options.clearUrl = options.clearUrl || null;
             options.urlHashLocation = options.urlHashLocation || false;
@@ -41,6 +42,7 @@ layui.define(["jquery", "miniMenu", "element","miniTab", "miniTheme"], function 
             options.loadingTime = options.loadingTime || 1;
             options.pageAnim = options.pageAnim || false;
             options.maxTabNum = options.maxTabNum || 20;
+            
             $.getJSON(options.iniUrl, function (data) {
                 if (data == null) {
                     miniAdmin.error('暂无菜单信息')
@@ -67,6 +69,7 @@ layui.define(["jquery", "miniMenu", "element","miniTab", "miniTheme"], function 
                             miniAdmin.renderDevice();
                         }
                     });
+                   
                     miniTheme.render({
                         bgColorDefault: options.bgColorDefault,
                         listen: true,
